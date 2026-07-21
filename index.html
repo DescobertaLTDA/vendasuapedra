@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
   <title>StoneCash - Venda suas Pedras por R$ 14,99</title>
 
+  <!-- ===== FAVICON ===== -->
+  <link rel="icon" type="image/png" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E💰%3C/text%3E%3C/svg%3E" />
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E💰%3C/text%3E%3C/svg%3E" />
+
   <meta property="og:title" content="StoneCash - Descubra o valor das pedras que você encontra" />
   <meta property="og:description" content="Guia completo com mapa de compradores + identificação de pedras. Apenas R$ 14,99." />
   <meta name="robots" content="index, follow" />
@@ -387,6 +391,110 @@
     }
 
     /* ============================================================
+       SACOLA DE DINHEIRO (AMARELA)
+       ============================================================ */
+    .sacola-section {
+      background: #ffffff;
+      padding: 40px 0 36px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .sacola-box {
+      background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+      border-radius: 20px;
+      padding: 32px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(245, 158, 11, 0.3);
+    }
+
+    .sacola-box::before {
+      content: '💰';
+      position: absolute;
+      font-size: 8rem;
+      right: -20px;
+      bottom: -30px;
+      opacity: 0.15;
+      transform: rotate(-10deg);
+    }
+
+    .sacola-box .sacola-icone {
+      font-size: 4rem;
+      display: block;
+      margin-bottom: 8px;
+      animation: balancar 2s ease-in-out infinite;
+    }
+
+    @keyframes balancar {
+      0%, 100% { transform: rotate(-5deg); }
+      50% { transform: rotate(5deg); }
+    }
+
+    .sacola-box h2 {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: #78350f;
+      margin-bottom: 6px;
+    }
+
+    .sacola-box .sub-sacola {
+      font-size: 1rem;
+      color: #92400e;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .sacola-box .preco-destaque {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: #1e293b;
+      background: rgba(255, 255, 255, 0.3);
+      display: inline-block;
+      padding: 4px 24px;
+      border-radius: 60px;
+      margin: 8px 0 12px;
+      backdrop-filter: blur(4px);
+    }
+
+    .sacola-box .preco-destaque small {
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    .sacola-box .btn-sacola {
+      display: inline-block;
+      background: #1e293b;
+      color: #fbbf24;
+      padding: 14px 40px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      border-radius: 60px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      box-shadow: 0 4px 0 #0f172a;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .sacola-box .btn-sacola:active {
+      transform: translateY(4px);
+      box-shadow: 0 1px 0 #0f172a;
+    }
+
+    .sacola-box .btn-sacola:hover {
+      background: #0f172a;
+    }
+
+    .sacola-box .sacola-info {
+      color: #78350f;
+      font-size: 0.8rem;
+      margin-top: 10px;
+      opacity: 0.8;
+    }
+
+    /* ============================================================
        POPUP DE VENDA - CANTO INFERIOR ESQUERDO
        ============================================================ */
     .venda-popup {
@@ -760,12 +868,12 @@
         font-size: 1rem;
       }
 
-      .depoimento-foto .info .nome {
-        font-size: 0.8rem;
+      .sacola-box h2 {
+        font-size: 1.3rem;
       }
 
-      .depoimento-foto .info .texto {
-        font-size: 0.8rem;
+      .sacola-box .preco-destaque {
+        font-size: 1.8rem;
       }
     }
 
@@ -952,7 +1060,7 @@
               <span class="badge-venda">✅ Vendeu</span>
             </div>
             <div class="texto">
-              "Vendi um <strong>quartzo</strong> por <strong>R$ 620</strong> para um comprador que estava na lista."
+              "Vendi um <strong>quartzo</strong> por <strong>R$ 620</strong> para um comprador da lista."
             </div>
             <span class="local">📍 Rio Grande do Sul</span>
           </div>
@@ -1062,6 +1170,28 @@
   </section>
 
   <!-- ============================================================
+       SACOLA DE DINHEIRO (AMARELA) - MAIS PARA BAIXO
+       ============================================================ -->
+  <section class="sacola-section">
+    <div class="container">
+      <div class="sacola-box">
+        <span class="sacola-icone">👜</span>
+        <h2>Ganhe dinheiro com pedras</h2>
+        <p class="sub-sacola">Mais de 100 compradores esperando por você</p>
+        <div class="preco-destaque">
+          R$ 14,99 <small>ou 2x R$ 7,50</small>
+        </div>
+        <button class="btn-sacola" id="btnSacola">
+          🚀 QUERO MINHA SACOLA DE DINHEIRO
+        </button>
+        <p class="sacola-info">
+          ✅ Acesso imediato · 7 dias de garantia · Bônus incluso
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
        FAQ
        ============================================================ -->
   <section class="faq">
@@ -1146,6 +1276,11 @@
       }
 
       document.getElementById('btnComprar').addEventListener('click', function(e) {
+        e.preventDefault();
+        irParaCompra();
+      });
+
+      document.getElementById('btnSacola').addEventListener('click', function(e) {
         e.preventDefault();
         irParaCompra();
       });
@@ -1297,7 +1432,7 @@
         }
       });
 
-      console.log('🚀 StoneCash - Depoimentos com fotos ativos! Preço: R$ 14,99');
+      console.log('🚀 StoneCash - Sacola amarela e favicon ativos!');
     })();
   </script>
 
