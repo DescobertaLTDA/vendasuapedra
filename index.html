@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
-  <title>StoneCash - Venda suas Pedras</title>
+  <title>StoneCash - Venda suas Pedras por R$ 14,99</title>
 
   <meta property="og:title" content="StoneCash - Descubra o valor das pedras que você encontra" />
-  <meta property="og:description" content="Guia completo com mapa de compradores + identificação de pedras. Apenas R$ 19,99." />
+  <meta property="og:description" content="Guia completo com mapa de compradores + identificação de pedras. Apenas R$ 14,99." />
   <meta name="robots" content="index, follow" />
 
   <style>
     /* ============================================================
-       RESET E BASE (MOBILE-FIRST)
+       RESET E BASE
        ============================================================ */
     * {
       margin: 0;
@@ -122,6 +122,18 @@
       padding: 18px 20px;
       margin-bottom: 16px;
       box-shadow: 0 8px 30px rgba(15, 23, 42, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .price-block::before {
+      content: '🔥';
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      font-size: 3rem;
+      opacity: 0.1;
+      transform: rotate(15deg);
     }
 
     .price-block .old-price {
@@ -133,7 +145,7 @@
 
     .price-block .current-price {
       color: #eab308;
-      font-size: 2.6rem;
+      font-size: 2.8rem;
       font-weight: 900;
       line-height: 1.1;
       display: block;
@@ -154,6 +166,19 @@
       padding: 3px 14px;
       border-radius: 40px;
       display: inline-block;
+    }
+
+    .price-block .selo-preco {
+      display: inline-block;
+      background: #dc2626;
+      color: #fff;
+      font-size: 0.6rem;
+      font-weight: 700;
+      padding: 2px 12px;
+      border-radius: 40px;
+      text-transform: uppercase;
+      margin-top: 8px;
+      letter-spacing: 0.5px;
     }
 
     /* ----- BOTÃO ----- */
@@ -245,6 +270,123 @@
     }
 
     /* ============================================================
+       DEPOIMENTOS COM FOTOS
+       ============================================================ */
+    .depoimentos-fotos {
+      background: #ffffff;
+      padding: 28px 0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .depoimentos-fotos .titulo {
+      text-align: center;
+      font-size: 0.75rem;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .depoimentos-fotos .subtitulo {
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 18px;
+    }
+
+    .depoimentos-fotos .subtitulo span {
+      color: #16a34a;
+    }
+
+    .grid-depoimentos {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .depoimento-foto {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: #f8fafc;
+      padding: 14px 16px;
+      border-radius: 16px;
+      border: 1px solid #eef2f6;
+      transition: all 0.2s;
+    }
+
+    .depoimento-foto:hover {
+      border-color: #eab308;
+      background: #fefcf5;
+    }
+
+    .depoimento-foto .foto {
+      width: 52px;
+      height: 52px;
+      min-width: 52px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #dbeafe;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #1e40af;
+      border: 2px solid #e2e8f0;
+    }
+
+    .depoimento-foto .foto img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .depoimento-foto .info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .depoimento-foto .info .nome {
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .depoimento-foto .info .nome .badge-venda {
+      background: #dcfce7;
+      color: #166534;
+      font-size: 0.55rem;
+      font-weight: 700;
+      padding: 1px 10px;
+      border-radius: 40px;
+      text-transform: uppercase;
+    }
+
+    .depoimento-foto .info .texto {
+      font-size: 0.88rem;
+      color: #1e293b;
+      margin-top: 2px;
+    }
+
+    .depoimento-foto .info .texto strong {
+      color: #16a34a;
+    }
+
+    .depoimento-foto .info .local {
+      font-size: 0.7rem;
+      color: #94a3b8;
+      margin-top: 2px;
+      display: block;
+    }
+
+    /* ============================================================
        POPUP DE VENDA - CANTO INFERIOR ESQUERDO
        ============================================================ */
     .venda-popup {
@@ -309,10 +451,18 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.1rem;
+      font-size: 1rem;
       flex-shrink: 0;
       color: #1e40af;
       font-weight: 700;
+      border: 2px solid #e2e8f0;
+    }
+
+    .venda-popup .popup-avatar img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
     }
 
     .venda-popup .popup-info {
@@ -356,7 +506,6 @@
       color: #475569;
     }
 
-    /* Badge de "agora" no popup */
     .venda-popup .popup-now {
       display: inline-block;
       background: #dcfce7;
@@ -368,58 +517,6 @@
       border-radius: 40px;
       margin-top: 4px;
       letter-spacing: 0.3px;
-    }
-
-    /* ============================================================
-       PROVA SOCIAL (DEPOIMENTOS)
-       ============================================================ */
-    .prova-social {
-      background: #ffffff;
-      padding: 24px 0;
-      border-bottom: 1px solid #e2e8f0;
-    }
-
-    .prova-social .titulo {
-      text-align: center;
-      font-size: 0.7rem;
-      color: #64748b;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-weight: 600;
-      margin-bottom: 12px;
-    }
-
-    .depoimentos {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .depoimento {
-      background: #f8fafc;
-      padding: 14px 16px;
-      border-radius: 14px;
-      border-left: 5px solid #eab308;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.03);
-    }
-
-    .depoimento p {
-      font-size: 0.9rem;
-      font-style: italic;
-      color: #1e293b;
-    }
-
-    .depoimento .autor {
-      font-style: normal;
-      font-weight: 700;
-      margin-top: 6px;
-      color: #0f172a;
-      font-size: 0.8rem;
-    }
-
-    .depoimento .autor small {
-      font-weight: 400;
-      color: #64748b;
     }
 
     /* ============================================================
@@ -581,7 +678,7 @@
     }
 
     /* ============================================================
-       BOTÃO FLUTUANTE (COMPRA RÁPIDA - MOBILE)
+       BOTÃO FLUTUANTE
        ============================================================ */
     .floating-btn {
       position: fixed;
@@ -653,15 +750,22 @@
         width: 34px;
         height: 34px;
         min-width: 34px;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
       }
 
-      .venda-popup .popup-info .nome {
-        font-size: 0.85rem;
+      .depoimento-foto .foto {
+        width: 42px;
+        height: 42px;
+        min-width: 42px;
+        font-size: 1rem;
       }
 
-      .venda-popup .popup-info .acao {
-        font-size: 0.75rem;
+      .depoimento-foto .info .nome {
+        font-size: 0.8rem;
+      }
+
+      .depoimento-foto .info .texto {
+        font-size: 0.8rem;
       }
     }
 
@@ -675,14 +779,10 @@
         font-size: 2.2rem;
       }
 
-      .depoimentos {
-        flex-direction: row;
-        flex-wrap: wrap;
-      }
-
-      .depoimento {
-        flex: 1;
-        min-width: 200px;
+      .grid-depoimentos {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
       }
 
       .grid-beneficios {
@@ -747,10 +847,12 @@
       <div class="price-block">
         <span class="old-price">De R$ 97,00</span>
         <span class="current-price">
-          R$ 19,99
-          <small>ou 2x de R$ 10,00 sem juros</small>
+          R$ 14,99
+          <small>ou 2x de R$ 7,50 sem juros</small>
         </span>
-        <span class="compare">💰 Menos que um almoço</span>
+        <span class="compare">💰 Menos que um lanche</span>
+        <br />
+        <span class="selo-preco">⚡ Preço de lançamento</span>
       </div>
 
       <!-- BOTÃO -->
@@ -777,24 +879,136 @@
   </section>
 
   <!-- ============================================================
-       PROVA SOCIAL (DEPOIMENTOS)
+       DEPOIMENTOS COM FOTOS
        ============================================================ -->
-  <section class="prova-social">
+  <section class="depoimentos-fotos">
     <div class="container">
-      <div class="titulo">+1.200 caçadores já usaram</div>
-      <div class="depoimentos">
-        <div class="depoimento">
-          <p>“Encontrei uma pedra azul no rio e vendi por R$ 380 no mesmo dia.”</p>
-          <div class="autor">João M. <small>– MG</small></div>
+      <div class="titulo">📸 Resultados reais</div>
+      <div class="subtitulo">
+        Veja quem já <span>vendeu</span> usando nossa lista
+      </div>
+
+      <div class="grid-depoimentos">
+
+        <!-- DEPOIMENTO 1 -->
+        <div class="depoimento-foto">
+          <div class="foto">
+            <img src="depoimento2.jpeg" alt="Foto de João" onerror="this.style.display='none'; this.parentElement.textContent='JM'" />
+          </div>
+          <div class="info">
+            <div class="nome">
+              João M.
+              <span class="badge-venda">✅ Vendeu</span>
+            </div>
+            <div class="texto">
+              "Encontrei uma <strong>ágata</strong> no rio e vendi por <strong>R$ 380</strong> em 2 dias."
+            </div>
+            <span class="local">📍 Minas Gerais</span>
+          </div>
         </div>
-        <div class="depoimento">
-          <p>“A lista de compradores é ouro puro. Já vendi 4 pedras.”</p>
-          <div class="autor">Carla S. <small>– SP</small></div>
+
+        <!-- DEPOIMENTO 2 -->
+        <div class="depoimento-foto">
+          <div class="foto">
+            <img src="depoimento3.jpeg" alt="Foto de Carla" onerror="this.style.display='none'; this.parentElement.textContent='CS'" />
+          </div>
+          <div class="info">
+            <div class="nome">
+              Carla S.
+              <span class="badge-venda">✅ Vendeu</span>
+            </div>
+            <div class="texto">
+              "A lista de compradores é <strong>ouro puro</strong>. Já vendi <strong>4 pedras</strong> diferentes."
+            </div>
+            <span class="local">📍 São Paulo</span>
+          </div>
         </div>
-        <div class="depoimento">
-          <p>“Já recuperei 10x o valor do guia. Vale cada centavo.”</p>
-          <div class="autor">Roberto A. <small>– BA</small></div>
+
+        <!-- DEPOIMENTO 3 -->
+        <div class="depoimento-foto">
+          <div class="foto">
+            <img src="depoimento5.jpeg" alt="Foto de Roberto" onerror="this.style.display='none'; this.parentElement.textContent='RA'" />
+          </div>
+          <div class="info">
+            <div class="nome">
+              Roberto A.
+              <span class="badge-venda">✅ Vendeu</span>
+            </div>
+            <div class="texto">
+              "Recuperei <strong>10x o valor</strong> do guia. Minha <strong>pirita</strong> saiu por <strong>R$ 850</strong>."
+            </div>
+            <span class="local">📍 Bahia</span>
+          </div>
         </div>
+
+        <!-- DEPOIMENTO 4 -->
+        <div class="depoimento-foto">
+          <div class="foto">
+            <img src="depoimento6.jpeg" alt="Foto de Fernanda" onerror="this.style.display='none'; this.parentElement.textContent='FL'" />
+          </div>
+          <div class="info">
+            <div class="nome">
+              Fernanda L.
+              <span class="badge-venda">✅ Vendeu</span>
+            </div>
+            <div class="texto">
+              "Vendi um <strong>quartzo</strong> por <strong>R$ 620</strong> para um comprador que estava na lista."
+            </div>
+            <span class="local">📍 Rio Grande do Sul</span>
+          </div>
+        </div>
+
+        <!-- DEPOIMENTO 5 -->
+        <div class="depoimento-foto">
+          <div class="foto">
+            <img src="depoimento7.jpeg" alt="Foto de Carlos" onerror="this.style.display='none'; this.parentElement.textContent='CM'" />
+          </div>
+          <div class="info">
+            <div class="nome">
+              Carlos M.
+              <span class="badge-venda">✅ Vendeu</span>
+            </div>
+            <div class="texto">
+              "Minha <strong>opala</strong> estava parada há anos. Vendi por <strong>R$ 1.200</strong> em uma semana."
+            </div>
+            <span class="local">📍 Goiás</span>
+          </div>
+        </div>
+
+        <!-- DEPOIMENTO 6 -->
+        <div class="depoimento-foto">
+          <div class="foto">
+            <img src="depoimento12.jpeg" alt="Foto de Mariana" onerror="this.style.display='none'; this.parentElement.textContent='MR'" />
+          </div>
+          <div class="info">
+            <div class="nome">
+              Mariana R.
+              <span class="badge-venda">✅ Vendeu</span>
+            </div>
+            <div class="texto">
+              "O guia de identificação é <strong>muito detalhado</strong>. Vendi minha <strong>granada</strong> por <strong>R$ 230</strong>."
+            </div>
+            <span class="local">📍 Santa Catarina</span>
+          </div>
+        </div>
+
+        <!-- DEPOIMENTO 7 -->
+        <div class="depoimento-foto">
+          <div class="foto">
+            <img src="depoimento13.jpeg" alt="Foto de Lucas" onerror="this.style.display='none'; this.parentElement.textContent='LO'" />
+          </div>
+          <div class="info">
+            <div class="nome">
+              Lucas O.
+              <span class="badge-venda">✅ Vendeu</span>
+            </div>
+            <div class="texto">
+              "Nunca imaginei que pedras comuns pudessem valer tanto. <strong>Já vendi 3</strong> desde que comprei."
+            </div>
+            <span class="local">📍 Paraná</span>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -804,7 +1018,7 @@
        ============================================================ -->
   <section class="o-que-recebe">
     <div class="container">
-      <h2>📦 Você leva tudo por R$ 19,99</h2>
+      <h2>📦 Você leva tudo por R$ 14,99</h2>
       <div class="grid-beneficios">
         <div class="beneficio">
           <span class="icone">📘</span>
@@ -870,8 +1084,8 @@
         <p>Imediatamente após a compra, no seu e-mail.</p>
       </div>
       <div class="faq-item">
-        <h4>Por que só R$ 19,99?</h4>
-        <p>Preço de lançamento. Em breve vai subir.</p>
+        <h4>Por que só R$ 14,99?</h4>
+        <p>Preço de lançamento. Em breve vai subir para R$ 67,00.</p>
       </div>
     </div>
   </section>
@@ -911,7 +1125,7 @@
   </div>
 
   <!-- ============================================================
-       BOTÃO FLUTUANTE (COMPRA RÁPIDA)
+       BOTÃO FLUTUANTE
        ============================================================ -->
   <button class="floating-btn" id="floatingBtn">💰</button>
 
@@ -974,7 +1188,7 @@
       }, 8000);
 
       // ============================================================
-      // 4. POPUP DE VENDA - CANTO INFERIOR ESQUERDO
+      // 4. POPUP DE VENDA
       // ============================================================
       const popup = document.getElementById('vendaPopup');
       const popupAvatar = document.getElementById('popupAvatar');
@@ -983,7 +1197,6 @@
       const popupValor = document.getElementById('popupValor');
       const popupFechar = document.getElementById('popupFechar');
 
-      // Dados realistas para os popups
       const dadosVendas = [
         { nome: 'Gustavo L.', iniciais: 'GL', pedra: 'granada', valor: 'R$ 230' },
         { nome: 'Carlos M.', iniciais: 'CM', pedra: 'ágata', valor: 'R$ 380' },
@@ -1001,7 +1214,6 @@
         { nome: 'Bruna S.', iniciais: 'BS', pedra: 'pirita', valor: 'R$ 730' },
         { nome: 'Diego N.', iniciais: 'DN', pedra: 'opala', valor: 'R$ 980' },
         { nome: 'Rafaela P.', iniciais: 'RP', pedra: 'turmalina', valor: 'R$ 1.450' },
-        { nome: 'Gustavo L.', iniciais: 'GL', pedra: 'ágata', valor: 'R$ 410' },
         { nome: 'Tatiane R.', iniciais: 'TR', pedra: 'quartzo', valor: 'R$ 150' },
         { nome: 'Eduardo C.', iniciais: 'EC', pedra: 'granada', valor: 'R$ 330' },
         { nome: 'Larissa M.', iniciais: 'LM', pedra: 'jaspe', valor: 'R$ 680' },
@@ -1015,7 +1227,6 @@
       function mostrarPopup() {
         if (popupVisible) return;
 
-        // Escolhe um item diferente do último
         let indice;
         do {
           indice = Math.floor(Math.random() * dadosVendas.length);
@@ -1051,21 +1262,18 @@
         }, 400);
       }
 
-      // Fechar ao clicar no X
       popupFechar.addEventListener('click', function(e) {
         e.stopPropagation();
         fecharPopup();
       });
 
       // ============================================================
-      // 5. EXIBIR POPUPS ALEATORIAMENTE
+      // 5. EXIBIR POPUPS
       // ============================================================
-      // Primeiro popup após 4 segundos
       setTimeout(function() {
         mostrarPopup();
       }, 4000);
 
-      // Depois a cada 8-18 segundos
       setInterval(function() {
         if (!popupVisible) {
           mostrarPopup();
@@ -1073,7 +1281,7 @@
       }, 8000 + Math.random() * 10000);
 
       // ============================================================
-      // 6. BOTÃO FLUTUANTE (aparece após rolagem)
+      // 6. BOTÃO FLUTUANTE
       // ============================================================
       const floatingBtn = document.getElementById('floatingBtn');
       let floatingShown = false;
@@ -1089,7 +1297,7 @@
         }
       });
 
-      console.log('🚀 StoneCash - Popup no canto inferior esquerdo ativo!');
+      console.log('🚀 StoneCash - Depoimentos com fotos ativos! Preço: R$ 14,99');
     })();
   </script>
 
