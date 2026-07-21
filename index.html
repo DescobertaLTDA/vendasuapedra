@@ -401,7 +401,7 @@
     }
 
     /* ============================================================
-       SACOLA DE DINHEIRO (AMARELA)
+       SACOLA DE DINHEIRO (AMARELA) - SEM BOTÃO
        ============================================================ */
     .sacola-section {
       background: #ffffff;
@@ -463,7 +463,7 @@
       display: inline-block;
       padding: 4px 24px;
       border-radius: 60px;
-      margin: 8px 0 12px;
+      margin: 8px 0 4px;
       backdrop-filter: blur(4px);
     }
 
@@ -477,38 +477,13 @@
       font-size: 0.85rem;
       color: #78350f;
       font-weight: 600;
-      margin-bottom: 8px;
-    }
-
-    .sacola-box .btn-sacola {
-      display: inline-block;
-      background: #1e293b;
-      color: #fbbf24;
-      padding: 14px 40px;
-      font-size: 1.1rem;
-      font-weight: 800;
-      border-radius: 60px;
-      border: none;
-      cursor: pointer;
-      transition: all 0.2s;
-      box-shadow: 0 4px 0 #0f172a;
-      touch-action: manipulation;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    .sacola-box .btn-sacola:active {
-      transform: translateY(4px);
-      box-shadow: 0 1px 0 #0f172a;
-    }
-
-    .sacola-box .btn-sacola:hover {
-      background: #0f172a;
+      margin-bottom: 4px;
     }
 
     .sacola-box .sacola-info {
       color: #78350f;
       font-size: 0.8rem;
-      margin-top: 10px;
+      margin-top: 16px;
       opacity: 0.8;
     }
 
@@ -1190,7 +1165,7 @@
   </section>
 
   <!-- ============================================================
-       SACOLA DE DINHEIRO (AMARELA) - MAIS PARA BAIXO
+       SACOLA DE DINHEIRO (AMARELA) - SEM BOTÃO
        ============================================================ -->
   <section class="sacola-section">
     <div class="container">
@@ -1202,10 +1177,7 @@
           R$ 14,99 <small>à vista</small>
         </div>
         <span class="parcela-destaque">ou 3x de R$ 5,49</span>
-        <button class="btn-sacola" id="btnSacola">
-          🚀 QUERO MINHA SACOLA DE DINHEIRO
-        </button>
-        <p class="sacola-info">
+        <p class="sacola-info" style="margin-top: 16px;">
           ✅ Acesso imediato · 7 dias de garantia · Bônus incluso
         </p>
       </div>
@@ -1297,11 +1269,6 @@
       }
 
       document.getElementById('btnComprar').addEventListener('click', function(e) {
-        e.preventDefault();
-        irParaCompra();
-      });
-
-      document.getElementById('btnSacola').addEventListener('click', function(e) {
         e.preventDefault();
         irParaCompra();
       });
@@ -1453,7 +1420,7 @@
         }
       });
 
-      console.log('🚀 StoneCash - Checkout Cakto conectado! Preço: R$ 14,99 ou 3x R$ 5,49');
+      console.log('🚀 StoneCash - Botão da sacola removido! Checkout Cakto conectado.');
     })();
   </script>
 
