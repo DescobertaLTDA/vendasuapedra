@@ -10,7 +10,7 @@
   <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E💰%3C/text%3E%3C/svg%3E" />
 
   <meta property="og:title" content="StoneCash - Descubra o valor das pedras que você encontra" />
-  <meta property="og:description" content="Guia completo com mapa de compradores + identificação de pedras. Apenas R$ 14,99." />
+  <meta property="og:description" content="Guia completo com mapa de compradores + identificação de pedras. Apenas R$ 14,99 ou 3x de R$ 5,49." />
   <meta name="robots" content="index, follow" />
 
   <style>
@@ -160,6 +160,16 @@
       font-weight: 400;
       color: #cbd5e1;
       display: block;
+    }
+
+    .price-block .parcelas {
+      color: #e2e8f0;
+      font-size: 0.85rem;
+      margin-top: 4px;
+      background: rgba(234, 179, 8, 0.12);
+      padding: 4px 14px;
+      border-radius: 40px;
+      display: inline-block;
     }
 
     .price-block .compare {
@@ -460,6 +470,14 @@
     .sacola-box .preco-destaque small {
       font-size: 1rem;
       font-weight: 400;
+    }
+
+    .sacola-box .parcela-destaque {
+      display: block;
+      font-size: 0.85rem;
+      color: #78350f;
+      font-weight: 600;
+      margin-bottom: 8px;
     }
 
     .sacola-box .btn-sacola {
@@ -956,8 +974,10 @@
         <span class="old-price">De R$ 97,00</span>
         <span class="current-price">
           R$ 14,99
-          <small>ou 2x de R$ 7,50 sem juros</small>
+          <small>à vista</small>
         </span>
+        <span class="parcelas">ou 3x de R$ 5,49</span>
+        <br />
         <span class="compare">💰 Menos que um lanche</span>
         <br />
         <span class="selo-preco">⚡ Preço de lançamento</span>
@@ -1179,8 +1199,9 @@
         <h2>Ganhe dinheiro com pedras</h2>
         <p class="sub-sacola">Mais de 100 compradores esperando por você</p>
         <div class="preco-destaque">
-          R$ 14,99 <small>ou 2x R$ 7,50</small>
+          R$ 14,99 <small>à vista</small>
         </div>
+        <span class="parcela-destaque">ou 3x de R$ 5,49</span>
         <button class="btn-sacola" id="btnSacola">
           🚀 QUERO MINHA SACOLA DE DINHEIRO
         </button>
@@ -1267,9 +1288,9 @@
       'use strict';
 
       // ============================================================
-      // 1. BOTÃO DE COMPRA
+      // 1. BOTÃO DE COMPRA - LINK DO CAKTO
       // ============================================================
-      const linkPagamento = 'https://seu-link.kiwify.com.br/seu-produto'; // ← TROQUE AQUI
+      const linkPagamento = 'https://pay.cakto.com.br/vyyxj4t_993775';
 
       function irParaCompra() {
         window.location.href = linkPagamento;
@@ -1432,7 +1453,7 @@
         }
       });
 
-      console.log('🚀 StoneCash - Sacola amarela e favicon ativos!');
+      console.log('🚀 StoneCash - Checkout Cakto conectado! Preço: R$ 14,99 ou 3x R$ 5,49');
     })();
   </script>
 
