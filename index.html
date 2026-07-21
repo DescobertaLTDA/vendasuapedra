@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
-  <title>StoneCash - Venda suas Pedras por R$ 14,99</title>
+  <title>StoneCash - Venda suas Pedras por R$ 8,99</title>
 
   <!-- ===== FAVICON ===== -->
   <link rel="icon" type="image/png" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E💰%3C/text%3E%3C/svg%3E" />
   <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E💰%3C/text%3E%3C/svg%3E" />
 
   <meta property="og:title" content="StoneCash - Descubra o valor das pedras que você encontra" />
-  <meta property="og:description" content="Guia completo com mapa de compradores + identificação de pedras. Apenas R$ 14,99 ou 3x de R$ 5,49." />
+  <meta property="og:description" content="Guia completo com mapa de compradores + ebook com 150 pedras para identificar e precificar. Apenas R$ 8,99 ou 3x de R$ 3,20." />
   <meta name="robots" content="index, follow" />
 
   <style>
@@ -488,6 +488,117 @@
     }
 
     /* ============================================================
+       BÔNUS - EBOOK COM 150 PEDRAS
+       ============================================================ */
+    .bonus-section {
+      background: #ffffff;
+      padding: 32px 0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .bonus-box {
+      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+      border-radius: 20px;
+      padding: 28px 20px;
+      text-align: center;
+      border: 3px solid #b45309;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bonus-box::before {
+      content: '📚';
+      position: absolute;
+      font-size: 6rem;
+      right: -10px;
+      bottom: -20px;
+      opacity: 0.1;
+      transform: rotate(-10deg);
+    }
+
+    .bonus-box .selo-bonus {
+      display: inline-block;
+      background: #dc2626;
+      color: #fff;
+      font-size: 0.6rem;
+      font-weight: 800;
+      padding: 3px 16px;
+      border-radius: 40px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .bonus-box .bonus-icone {
+      font-size: 3.5rem;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .bonus-box h3 {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: #78350f;
+      margin-bottom: 4px;
+    }
+
+    .bonus-box .bonus-destaque {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #92400e;
+      margin-bottom: 6px;
+    }
+
+    .bonus-box .bonus-destaque span {
+      background: #78350f;
+      color: #fef3c7;
+      padding: 2px 12px;
+      border-radius: 40px;
+      font-size: 0.85rem;
+    }
+
+    .bonus-box .bonus-descricao {
+      font-size: 0.9rem;
+      color: #78350f;
+      max-width: 400px;
+      margin: 4px auto 8px;
+    }
+
+    .bonus-box .bonus-lista {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px 16px;
+      margin: 10px 0 6px;
+    }
+
+    .bonus-box .bonus-lista span {
+      background: rgba(255, 255, 255, 0.5);
+      padding: 2px 14px;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      color: #78350f;
+      font-weight: 600;
+    }
+
+    .bonus-box .bonus-valor {
+      display: inline-block;
+      background: #78350f;
+      color: #fef3c7;
+      padding: 4px 20px;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-top: 8px;
+    }
+
+    .bonus-box .bonus-valor span {
+      text-decoration: line-through;
+      opacity: 0.7;
+      font-weight: 400;
+    }
+
+    /* ============================================================
        POPUP DE VENDA - CANTO INFERIOR ESQUERDO
        ============================================================ */
     .venda-popup {
@@ -681,45 +792,6 @@
     }
 
     /* ============================================================
-       BÔNUS
-       ============================================================ */
-    .bonus-section {
-      background: #ffffff;
-      padding: 24px 0;
-      border-bottom: 1px solid #e2e8f0;
-    }
-
-    .bonus-box {
-      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-      border-radius: 16px;
-      padding: 20px 18px;
-      text-align: center;
-      border: 2px dashed #b45309;
-    }
-
-    .bonus-box h3 {
-      font-size: 1.2rem;
-      color: #78350f;
-    }
-
-    .bonus-box p {
-      color: #78350f;
-      font-size: 0.9rem;
-      margin-top: 4px;
-    }
-
-    .bonus-box .destaque-bonus {
-      background: #78350f;
-      color: #fef3c7;
-      padding: 3px 14px;
-      border-radius: 40px;
-      font-weight: 700;
-      font-size: 0.7rem;
-      display: inline-block;
-      margin-top: 6px;
-    }
-
-    /* ============================================================
        FAQ
        ============================================================ */
     .faq {
@@ -868,6 +940,15 @@
       .sacola-box .preco-destaque {
         font-size: 1.8rem;
       }
+
+      .bonus-box h3 {
+        font-size: 1.2rem;
+      }
+
+      .bonus-box .bonus-lista span {
+        font-size: 0.65rem;
+        padding: 1px 10px;
+      }
     }
 
     @media (min-width: 600px) {
@@ -948,12 +1029,12 @@
       <div class="price-block">
         <span class="old-price">De R$ 97,00</span>
         <span class="current-price">
-          R$ 14,99
+          R$ 8,99
           <small>à vista</small>
         </span>
-        <span class="parcelas">ou 3x de R$ 5,49</span>
+        <span class="parcelas">ou 3x de R$ 3,20</span>
         <br />
-        <span class="compare">💰 Menos que um lanche</span>
+        <span class="compare">☕ Menos que um café</span>
         <br />
         <span class="selo-preco">⚡ Preço de lançamento</span>
       </div>
@@ -1121,7 +1202,7 @@
        ============================================================ -->
   <section class="o-que-recebe">
     <div class="container">
-      <h2>📦 Você leva tudo por R$ 14,99</h2>
+      <h2>📦 Você leva tudo por R$ 8,99</h2>
       <div class="grid-beneficios">
         <div class="beneficio">
           <span class="icone">📘</span>
@@ -1135,9 +1216,10 @@
           <span class="selo">⭐ exclusivo</span>
         </div>
         <div class="beneficio">
-          <span class="icone">✅</span>
-          <h3>Checklist de Campo</h3>
-          <p>Leve no bolso</p>
+          <span class="icone">📚</span>
+          <h3>Ebook +150 Pedras</h3>
+          <p>Identifique e precifique cada uma</p>
+          <span class="selo">🎁 bônus</span>
         </div>
         <div class="beneficio">
           <span class="icone">💬</span>
@@ -1149,17 +1231,35 @@
   </section>
 
   <!-- ============================================================
-       BÔNUS
+       BÔNUS - EBOOK COM 150 PEDRAS
        ============================================================ -->
   <section class="bonus-section">
     <div class="container">
       <div class="bonus-box">
-        <h3>🎁 Bônus exclusivo</h3>
-        <p>
-          <strong>Vídeo:</strong> "Como usar a lista de compradores do zero"<br />
-          <span style="font-size:0.8rem;">(valor: R$ 27,00) — <strong>grátis</strong> hoje</span>
+        <span class="selo-bonus">🎁 Bônus exclusivo</span>
+        <span class="bonus-icone">📚</span>
+        <h3>Ebook +150 Pedras</h3>
+        <p class="bonus-destaque">
+          Identifique e <span>precifique</span> qualquer pedra que encontrar
         </p>
-        <span class="destaque-bonus">⏳ Últimas horas</span>
+        <p class="bonus-descricao">
+          Com este ebook você vai aprender a identificar mais de <strong>150 tipos de pedras</strong>,
+          com fotos, características e <strong>faixa de preço</strong> de cada uma.
+        </p>
+        <div class="bonus-lista">
+          <span>💎 Ágatas</span>
+          <span>💎 Quartzos</span>
+          <span>💎 Jaspers</span>
+          <span>💎 Calcitas</span>
+          <span>💎 Piritas</span>
+          <span>💎 Opalas</span>
+          <span>💎 Granadas</span>
+          <span>💎 Turmalinas</span>
+          <span>💎 +150 tipos</span>
+        </div>
+        <span class="bonus-valor">
+          Valor: <span>R$ 47,00</span> — Grátis na compra da lista
+        </span>
       </div>
     </div>
   </section>
@@ -1174,9 +1274,9 @@
         <h2>Ganhe dinheiro com pedras</h2>
         <p class="sub-sacola">Mais de 100 compradores esperando por você</p>
         <div class="preco-destaque">
-          R$ 14,99 <small>à vista</small>
+          R$ 8,99 <small>à vista</small>
         </div>
-        <span class="parcela-destaque">ou 3x de R$ 5,49</span>
+        <span class="parcela-destaque">ou 3x de R$ 3,20</span>
         <p class="sacola-info" style="margin-top: 16px;">
           ✅ Acesso imediato · 7 dias de garantia · Bônus incluso
         </p>
@@ -1203,11 +1303,15 @@
         <p>Sim. Verificamos cada um dos +100 contatos.</p>
       </div>
       <div class="faq-item">
+        <h4>O que vem no ebook de +150 pedras?</h4>
+        <p>Fotos, características e faixa de preço de mais de 150 tipos de pedras.</p>
+      </div>
+      <div class="faq-item">
         <h4>Como recebo o material?</h4>
         <p>Imediatamente após a compra, no seu e-mail.</p>
       </div>
       <div class="faq-item">
-        <h4>Por que só R$ 14,99?</h4>
+        <h4>Por que só R$ 8,99?</h4>
         <p>Preço de lançamento. Em breve vai subir para R$ 67,00.</p>
       </div>
     </div>
@@ -1420,7 +1524,7 @@
         }
       });
 
-      console.log('🚀 StoneCash - Botão da sacola removido! Checkout Cakto conectado.');
+      console.log('🚀 StoneCash - Preço ajustado para R$ 8,99! Checkout Cakto conectado.');
     })();
   </script>
 
